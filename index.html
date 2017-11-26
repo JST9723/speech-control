@@ -316,7 +316,7 @@ $(document).ready(function() {
  	}
  	var potentialcommand = document.getElementById("final_span").innerHTML;
  	console.log(final_transcript);
-    var re = /^(click|scroll|enter)\s(.*)/i;
+    var re = /^(Click|scroll|enter)\s(.*)/i;
     var result = re.exec(potentialcommand);
     console.log(result);
  	if(result) {
