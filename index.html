@@ -318,7 +318,7 @@ $(document).ready(function() {
  	console.log(final_transcript);
     var re = /^(click|scroll|enter)\s(.*)/i;
     var result = re.exec(potentialcommand);
-
+    console.log(result);
  	if(result) {
 	  var verb = result[1];
       var arg = result[2]
