@@ -314,9 +314,9 @@ $(document).ready(function() {
  	if(e.key=="s") {
  		startButton(event);
  	}
- 	var potentialcommand = document.getElementById("final_span").innerHTML;
- 	console.log(final_transcript);
-    var re = /^(Click|scroll|enter)\s(.*)/i;
+ 	var potentialcommand = document.getElementById("final_span").innerHTML.toLowerCase;;
+ 	console.log(potentialcommand);
+    var re = /^(click|scroll|enter)\s(.*)/i;
     var result = re.exec(potentialcommand);
     console.log(result);
  	if(result) {
