@@ -314,7 +314,8 @@ $(document).ready(function() {
  	if(e.key=="s") {
  		startButton(event);
  	}
-
+ 	var potentialcommand = final_transcript;
+ 	console.log(final_transcript);
     var re = /^(click|scroll|enter)\s(.*)/i;
     var result = re.exec(potentialcommand);
 
