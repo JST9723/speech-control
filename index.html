@@ -90,7 +90,7 @@
 
 <p>
 <input type="button" value="cat"><br>
-<a href="https://www.google.com">Google</a><br>
+<a href="https://www.google.com" id="google">Google</a><br>
 <a href="https://www.cmu.edu">CMU</a><br>
 <div id="info">
   <p id="info_start">Click on the microphone icon and begin speaking.</p>
@@ -341,7 +341,7 @@ $(document).ready(function() {
       	    	// link
       	    	if($(this)[0].innerHTML.toLowerCase().indexOf(arg) >= 0){
       	    		console.log("==============");
-      	    		simulateClick($(this));
+      	    		simulateClick(document.getElementById("google"));
       	    	}
       	    }
       	    else if($(this)[0].tagName == "BUTTON") {
