@@ -339,7 +339,9 @@ $(document).ready(function() {
       	    }
       	    else if($(this)[0].tagName == "A") {
       	    	// link
-      	    	console.log($(this)[0].innerHTML);
+      	    	if($(this)[0].innerHTML.indexOf(arg) >= 0){
+      	    		simulateClick($(this));
+      	    	}
       	    }
       	    else if($(this)[0].tagName == "BUTTON") {
 
@@ -386,6 +388,7 @@ var first_char = /\S/;
 function capitalize(s) {
   return s.replace(first_char, function(m) { return m.toUpperCase(); });
 }
+
 
 function createEmail() {
   var n = final_transcript.indexOf('\n');
@@ -461,4 +464,17 @@ function showButtons(style) {
   copy_info.style.display = 'none';
   email_info.style.display = 'none';
 }
+
+function simulateClick(element) {
+  if (!element) return;
+  var dispatchEvent = function (elt, name) {
+    var clickEvent = document.createEvent('MouseEvents');
+    clickEvent.initEvent(name, true, true);
+    elt.dispatchEvent(clickEvent);
+  };
+  dispatchEvent(element, 'mouseover');
+  dispatchEvent(element, 'mousedown');
+  dispatchEvent(element, 'click');
+  dispatchEvent(element, 'mouseup');
+};
 </script>
