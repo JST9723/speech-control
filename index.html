@@ -343,7 +343,7 @@ $(document).ready(function() {
       	    		console.log("==============");
       	    		var x = document.getElementById("google");
       	    		console.log(x);
-      	    		$('#google').click();
+      	    		simulateClick(x);
       	    	}
       	    }
       	    else if($(this)[0].tagName == "BUTTON") {
@@ -477,4 +477,17 @@ function eventFire(el, etype){
     el.dispatchEvent(evObj);
   }
 }
+
+function simulateClick(element) {
+  if (!element) return;
+  var dispatchEvent = function (elt, name) {
+    var clickEvent = document.createEvent('MouseEvents');
+    clickEvent.initEvent(name, true, true);
+    elt.dispatchEvent(clickEvent);
+  };
+  dispatchEvent(element, 'mouseover');
+  dispatchEvent(element, 'mousedown');
+  dispatchEvent(element, 'click');
+  dispatchEvent(element, 'mouseup');
+};
 </script>
