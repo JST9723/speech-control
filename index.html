@@ -341,7 +341,7 @@ $(document).ready(function() {
       	    	// link
       	    	if($(this)[0].innerHTML.toLowerCase().indexOf(arg) >= 0){
       	    		console.log("==============");
-      	    		simulateClick(document.getElementById("google"));
+      	    		eventFire(document.getElementById('google'), 'click');
       	    	}
       	    }
       	    else if($(this)[0].tagName == "BUTTON") {
@@ -466,16 +466,13 @@ function showButtons(style) {
   email_info.style.display = 'none';
 }
 
-function simulateClick(element) {
-  if (!element) return;
-  var dispatchEvent = function (elt, name) {
-    var clickEvent = document.createEvent('MouseEvents');
-    clickEvent.initEvent(name, true, true);
-    elt.dispatchEvent(clickEvent);
-  };
-  dispatchEvent(element, 'mouseover');
-  dispatchEvent(element, 'mousedown');
-  dispatchEvent(element, 'click');
-  dispatchEvent(element, 'mouseup');
-};
+function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
 </script>
