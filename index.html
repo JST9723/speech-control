@@ -339,7 +339,8 @@ $(document).ready(function() {
       	    }
       	    else if($(this)[0].tagName == "A") {
       	    	// link
-      	    	if($(this)[0].innerHTML.indexOf(arg) >= 0){
+      	    	if($(this)[0].innerHTML.toLowerCase().indexOf(arg) >= 0){
+      	    		console.log("==============");
       	    		simulateClick($(this));
       	    	}
       	    }
