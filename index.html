@@ -341,7 +341,7 @@ $(document).ready(function() {
       	    	// link
       	    	if($(this)[0].innerHTML.toLowerCase().indexOf(arg) >= 0){
       	    		console.log("==============");
-      	    		eventFire(document.getElementById('google'), 'click');
+      	    		$('#google').click();
       	    	}
       	    }
       	    else if($(this)[0].tagName == "BUTTON") {
