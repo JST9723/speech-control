@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+<html>
 <meta charset="utf-8">
 <title>Speech Control</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <style>
   * {
     font-family: Verdana, Arial, sans-serif;
+  }
+  body {
+    margin-left: 50px;
+    margin-right: 50px;
   }
   a:link {
     color:#000;
@@ -81,6 +86,7 @@
     padding: 0;
   }
 </style>
+<body>
 <h1 class="center" id="headline">
   Project 8 Speech Control</h1>
 
@@ -147,6 +153,7 @@ You can, however, access speech recognition relatively easily from a web page ho
     <select id="select_dialect"></select>
   </div>
 </div>
+</body>
 <script>
 var langs =
 [['Afrikaans',       ['af-ZA']],
@@ -509,3 +516,4 @@ function simulateClick(element) {
   dispatchEvent(element, 'mouseup');
 };
 </script>
+</html>>
