@@ -8,8 +8,11 @@
     font-family: Verdana, Arial, sans-serif;
   }
   body {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  p {
+    margin-top: 50px;
   }
   a:link {
     color:#000;
@@ -100,9 +103,14 @@ You can, however, access speech recognition relatively easily from a web page ho
 </p>
 
 <p>
-<input type="button" value="cat"><br>
-<a href="https://www.google.com" id="google">Google</a><br>
-<a href="https://www.cmu.edu">CMU</a><br>
+  <input type="button" value="cat"><br>
+</p>
+<p>
+  <a href="https://www.google.com" id="google">Google</a><br>
+</p>
+<p>
+  <a href="https://www.cmu.edu">CMU</a><br>
+</p>
 <div id="info">
   <p id="info_start">Click on the key "S" and begin speaking.</p>
   <p id="info_speak_now">Speak now.</p>
@@ -516,4 +524,4 @@ function simulateClick(element) {
   dispatchEvent(element, 'mouseup');
 };
 </script>
-</html>>
+</html>
