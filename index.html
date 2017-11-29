@@ -93,7 +93,7 @@
 <a href="https://www.google.com" id="google">Google</a><br>
 <a href="https://www.cmu.edu">CMU</a><br>
 <div id="info">
-  <p id="info_start">Click on the microphone icon and begin speaking.</p>
+  <p id="info_start">Click on the key "S" and begin speaking.</p>
   <p id="info_speak_now">Speak now.</p>
   <p id="info_no_speech">No speech was detected. You may need to adjust your
     <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
@@ -355,7 +355,20 @@ $(document).ready(function() {
       	case "scroll":
       	  // what do we do on scroll?
       	  console.log("handling scroll`")
-      	  break;
+      	  if(arg == "up"){
+            $('html, body').animate({
+              scrollTop: $(document).scrollTop()-150
+            }, 1000);
+          }
+          else if (arg == "down"){
+            $('html, body').animate({
+              scrollTop: $(document).scrollTop()+150
+            }, 1000);
+          }
+          else {
+            alert("Sorry, that is not a recognized command")
+          }
+          break;
       	case "enter":
       	  // what do we do on enter?
       	  console.log("handling enter")
