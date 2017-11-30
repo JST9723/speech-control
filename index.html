@@ -388,8 +388,6 @@ $(document).ready(function() {
               }
       	    }
       	  })
-
-      	  break;
         }
       	else if(verb == "scroll"){
       	  // what do we do on scroll?
@@ -407,13 +405,11 @@ $(document).ready(function() {
           else {
             alert("Sorry, that is not a recognized command");
           }
-          break;
         }
       	else if(verb == "enter"){
       	  // what do we do on enter?
       	  console.log("handling enter")
           $("input")[0].value = $("input")[0].value + arg;
-      	  break;
       	}
         else{
           alert("Sorry, that is not a recognized command");
