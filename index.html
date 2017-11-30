@@ -108,7 +108,7 @@ You can, however, access speech recognition relatively easily from a web page ho
 </p>
 
 <p>
-  <input type="button" id="cat" value="cat"><br>
+  <input type="button" id="syllabus" value="syllabus" onclick="syllabus()"><br>
 </p>
 <p>
   <a href="https://www.google.com" id="google">Google</a><br>
@@ -373,7 +373,13 @@ $(document).ready(function() {
       	    	}
       	    }
       	    else if($(this)[0].tagName == "BUTTON") {
-
+              if(arg.indexOf($(this)[0].value.toLowerCase()) >= 0){
+              //if($(this)[0].innerHTML.toLowerCase().indexOf(arg) >= 0){
+                console.log("==============");
+                var x = document.getElementById($(this)[0].value.toLowerCase());
+                console.log(x);
+                simulateClick(x);
+              }
       	    }
       	  })
 
@@ -516,6 +522,10 @@ function eventFire(el, etype){
     evObj.initEvent(etype, true, false);
     el.dispatchEvent(evObj);
   }
+}
+
+function syllabus(){
+  window.location.assign("http://accessibilitycourse.com/syllabus.html");
 }
 
 function simulateClick(element) {
