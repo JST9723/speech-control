@@ -361,6 +361,13 @@ $(document).ready(function() {
       	  $("a,input,button").each(function() {
       	    if($(this)[0].tagName == "INPUT") {
       	    	// look for the text in INPUT fields
+              if(arg.indexOf($(this)[0].value.toLowerCase()) >= 0){
+              //if($(this)[0].innerHTML.toLowerCase().indexOf(arg) >= 0){
+                console.log("==============");
+                var x = document.getElementById($(this)[0].value.toLowerCase());
+                console.log(x);
+                simulateClick(x);
+              }
       	    }
       	    else if($(this)[0].tagName == "A") {
       	    	// link
@@ -525,6 +532,7 @@ function eventFire(el, etype){
 }
 
 function syllabus(){
+  console.log("handling syllabus");
   window.location.assign("http://accessibilitycourse.com/syllabus.html");
 }
 
