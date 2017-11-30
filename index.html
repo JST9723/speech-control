@@ -349,8 +349,7 @@ $(document).ready(function() {
 
       console.log("verb: " + verb + ", args: " + arg)
 
-      switch(verb) {
-      	case "click":
+      if(verb == "click"){
       	  // what do we do if click?
       	  console.log("handling click");
 
@@ -391,7 +390,8 @@ $(document).ready(function() {
       	  })
 
       	  break;
-      	case "scroll":
+        }
+      	else if(verb == "scroll"){
       	  // what do we do on scroll?
       	  console.log("handling scroll`")
       	  if(arg == "up"){
@@ -405,17 +405,19 @@ $(document).ready(function() {
             }, 1000);
           }
           else {
-            alert("Sorry, that is not a recognized command")
+            alert("Sorry, that is not a recognized command");
           }
           break;
-      	case "enter":
+        }
+      	else if(verb == "enter"){
       	  // what do we do on enter?
       	  console.log("handling enter")
           $("input")[0].value = $("input")[0].value + arg;
       	  break;
-      	default:
-      	  alert("Sorry, that is not a recognized command")
-      }
+      	}
+        else{
+          alert("Sorry, that is not a recognized command");
+        }
 
 
 	  //console.log("Scroll " + result[1]);
